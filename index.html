@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PANEL DOX V6 - GOD MODE</title>
+    <style>
+        /* Design Cyberpunk & Profond */
+        body {
+            background: #000;
+            color: #00ffea;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .panel-container {
+            position: relative;
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px #00ffea;
+        }
+
+        .scanner-line {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            height: 5px;
+            background: transparent;
+            border-top: 2px solid #00ffea;
+            animation: scan 3s linear infinite;
+            pointer-events: none;
+        }
+
+        .big-btn {
+            background: rgba(0, 255, 234, 0.1);
+            border: 1px solid #00ffea;
+            color: #fff;
+            padding: 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 234, 0.3);
+            transition: 0.3s;
+        }
+
+        .big-btn:hover {
+            background: #00ffea;
+            color: #000;
+            box-shadow: 0 0 30px #00ffea;
+        }
+
+        /* L'info cachée (Upload du DB) */
+        .data-transfer {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="panel-container">
+        <div class="scanner-line"></div>
+        <h1>PANEL DOX</h1>
+
+        <button class="big-btn" onclick="activateGodMode()">CONNEXION ACTIVE</button>
+        
+        <div class="data-transfer">
+            TARGET: <span id="username">YOU</span><br>
+            STATUS: <span id="status">SCANNING...</span>
+        </div>
+
+        <!-- L'astuce visuelle -->
+        <div style="margin-top: 50px; font-size: 3rem;">☠️</div>
+    </div>
+
+    <script>
+        function activateGodMode() {
+            // C'est ici que la magique opère
+            const targetName = "USER_NOM_IICI";
+
+            // 1. Le hack de hauteur
+            // C'est ce qui force la personne à scroller 
+            // et à refaire défiler l'historique de fou ;)
+            const webHeight = 9999;
+            document.getElementById(targetName).innerHTML = `${webHeight}`;
+        }
+
+        // Petit Flash écran pour effrayer un peu
+        setTimeout(() => {
+            document.body.style.background = "#fff";
+        }, 500);
+        setTimeout(() => {
+            document.body.style.background = "#000";
+        }, 1000);
+    </script>
+</body>
+</html>
